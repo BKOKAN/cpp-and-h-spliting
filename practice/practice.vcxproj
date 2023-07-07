@@ -104,7 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\bozo\source\repos\practice\practice\SFML-2.5.1\include;C:\Users\bozo\source\repos\practice\practice\SFML-2.5.1\include\SFML;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\bozo\source\repos\practice\SFML-2.5.1\include\SFML;C:\Users\bozo\source\repos\practice\SFML-2.5.1;C:\Users\bozo\source\repos\practice\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

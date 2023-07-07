@@ -4,6 +4,7 @@
 #include <Graphics/RenderWindow.hpp>
 #include <cstdlib>
 #include <ctime>
+#include "variables.h"
 
 int main()
 {
@@ -20,6 +21,9 @@ int main()
 			if (event.type == sf::Event::Closed)
 				window.close();
 			{
+				void textures(sf::Texture, sf::Sprite);
+				void controls(sf::Event event);
+				window.draw(sprite_main_menu);
 			}
 		}
 	}
