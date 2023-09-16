@@ -1,6 +1,6 @@
-#include <iostream>
 #include <Graphics.hpp>
 #include <Graphics/RenderWindow.hpp>
+#include "variables.h"
 
 class TextureManager
 {
@@ -9,10 +9,11 @@ private:
 	std::map<sf::String, sf::Sprite> sprites;
 
 public:
-	void LoadTexture()
+	void Manager()
 	{
+		// Set name for textures
 		sf::Texture texture_select_ui;
-		textures.push_back(texture_select_ui);
+		textures.push_back(texture_select_ui); // Push those texture out of the function
 		sf::Texture texture_main_menu;
 		textures.push_back(texture_main_menu);
 		sf::Texture texture_add_new_worker;
@@ -28,8 +29,8 @@ public:
 		sf::Texture texture_supply_storage;
 		textures.push_back(texture_supply_storage);
 		
-		std::string projectFolderPath = "./";
-		std::string resourcesfolder = projectFolderPath + "/resources";
+		std::string projectFolderPath = "./"; // Direct path to the project file
+		std::string ResourcesFolder = projectFolderPath + "/resources";
 		std::string select_ui_path = projectFolderPath + "resources/select_ui.png";
 		texture_select_ui.loadFromFile(select_ui_path);
 		std::string main_menu_path = projectFolderPath + "resources/main_menu.png";
@@ -47,7 +48,7 @@ public:
 		std::string add_new_supply_path = projectFolderPath + "resources/add_new_supply.png";
 		texture_add_new_supply.loadFromFile(add_new_supply_path);
 		
-		sf::Sprite sprite_select_ui;
+		sf::Sprite sprite_select_ui; // Sprite name
 		sf::Sprite sprite_main_menu;
 		sf::Sprite sprite_add_new_worker;
 		sf::Sprite sprite_existing_workers;
@@ -56,6 +57,7 @@ public:
 		sf::Sprite sprite_supply_storage;
 		sf::Sprite sprite_add_new_supply;
 
+		// Setting textures for sprites and position
 		sprite_select_ui.setTexture(texture_select_ui);
 		sprite_select_ui.setPosition(0, 0);
 		sprite_main_menu.setTexture(texture_main_menu);
@@ -72,7 +74,8 @@ public:
 		sprite_supply_storage.setPosition(0, 0);
 		sprite_add_new_supply.setTexture(texture_add_new_supply);
 		sprite_add_new_supply.setPosition(0, 0);
-				
+			
+		// Set the sprites in the map so its survives out side of the function
 		sprites["select_ui"] = sprite_select_ui;
 		sprites["main_menu"] = sprite_main_menu;
 		sprites["add_new_worker"] = sprite_add_new_worker;
@@ -82,33 +85,34 @@ public:
 		sprites["supply_storage"] = sprite_supply_storage;
 		sprites["new_supply"] = sprite_add_new_supply;
 		}
+	// Get a texture by identifier
+	sf::Texture& getTexture(const sf::String& identifier);
+
+	// Get a sprite by identifier
+	sf::Sprite& getSprite(const sf::String& identifier);
 };
-void controls(sf::Event event)
-{
-	bool move_down = false;
-	bool move_up = false;
 
-	if (move_up)
-	{
+void controls(sf::Event event, TextureManager& textureManager) {
+	static bool move_down = false;
+	static bool move_up = false;
 
+	if (move_up) {
+		// Handle moving up
 	}
-	if (move_down)
-	{
-
+	if (move_down) {
+		// Handle moving down
 	}
 
-	if (event.type == event.KeyPressed)
-		switch (event.key.code)
-		{
+	if (event.type == sf::Event::EventType::KeyPressed) {
+		switch (event.key.code) {
 		case sf::Keyboard::Up:
-		{
-		move_up = true;
-		}
-		break;
+			move_up = true;
+			break;
 		case sf::Keyboard::Down:
-		{
-		move_down = true;
+			move_down = true;
+			break;
 		}
-		break;
-		}
+	}
 }
+
+
