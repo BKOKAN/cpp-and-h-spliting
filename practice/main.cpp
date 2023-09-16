@@ -8,7 +8,8 @@
 
 int main()
 {
-
+	TextureManager Manager;
+	
 	sf::RenderWindow window(sf::VideoMode(1680,1050), "Practice");
 	window.setFramerateLimit(144);
 	window.setActive();
@@ -21,9 +22,7 @@ int main()
 			if (event.type == sf::Event::Closed)
 				window.close();
 			{
-				void textures(sf::Texture, sf::Sprite);
-				void controls(sf::Event event);
-				window.draw(sprite_main_menu);
+				
 			}
 		}
 	}
