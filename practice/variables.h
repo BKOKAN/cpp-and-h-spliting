@@ -9,11 +9,12 @@ private:
     std::map<std::string, sf::Sprite> sprites;
 
 public:
-    TextureManager();
+    void Manager();
 	sf::Texture& GetTexture(TextureID identifier);
 	sf::Sprite& GetSprite(TextureID identifier);
 };
 
 void controls(sf::Event event, TextureManager& textureManager);
+
 
 #endif
