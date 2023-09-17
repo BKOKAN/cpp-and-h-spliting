@@ -4,7 +4,7 @@
 
 int main()
 {
-    // Create an instance of the TextureManager class
+     // Create an instance of the TextureManager class
     TextureManager textureManager;
 
     // Access a texture by identifier

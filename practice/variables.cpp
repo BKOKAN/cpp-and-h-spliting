@@ -2,13 +2,24 @@
 #include <Graphics/RenderWindow.hpp>
 #include "variables.h"
 
-class TextureManager
-{
+enum class TextureID {
+	SelectUI,
+	MainMenu,
+	AddNewWorker,
+	ExistingWorkers,
+	WorkerOptions,
+	Stats,
+	SupplyStorage,
+	NewSupply
+};
+
+class TextureManager {
 private:
 	std::vector<sf::Texture> textures;
 	std::map<sf::String, sf::Sprite> sprites;
 
 public:
+	
 	void Manager()
 	{
 		// Set name for textures
@@ -28,7 +39,7 @@ public:
 		textures.push_back(texture_add_new_supply);
 		sf::Texture texture_supply_storage;
 		textures.push_back(texture_supply_storage);
-		
+
 		std::string projectFolderPath = "./"; // Direct path to the project file
 		std::string ResourcesFolder = projectFolderPath + "/resources";
 		std::string select_ui_path = projectFolderPath + "resources/select_ui.png";
@@ -47,7 +58,7 @@ public:
 		texture_supply_storage.loadFromFile(supply_storage_path);
 		std::string add_new_supply_path = projectFolderPath + "resources/add_new_supply.png";
 		texture_add_new_supply.loadFromFile(add_new_supply_path);
-		
+
 		sf::Sprite sprite_select_ui; // Sprite name
 		sf::Sprite sprite_main_menu;
 		sf::Sprite sprite_add_new_worker;
@@ -74,7 +85,7 @@ public:
 		sprite_supply_storage.setPosition(0, 0);
 		sprite_add_new_supply.setTexture(texture_add_new_supply);
 		sprite_add_new_supply.setPosition(0, 0);
-			
+
 		// Set the sprites in the map so its survives out side of the function
 		sprites["select_ui"] = sprite_select_ui;
 		sprites["main_menu"] = sprite_main_menu;
@@ -84,12 +95,50 @@ public:
 		sprites["worker_stats"] = sprite_stats;
 		sprites["supply_storage"] = sprite_supply_storage;
 		sprites["new_supply"] = sprite_add_new_supply;
-		}
-	// Get a texture by identifier
-	sf::Texture& getTexture(const sf::String& identifier);
+	}
+	sf::Texture& GetTexture(TextureID identifier)
+	{};
+	sf::Sprite& GetSprite(TextureID identifier)
+	{
+		// Convert the enum to a string
+		std::string identifierStr;
 
-	// Get a sprite by identifier
-	sf::Sprite& getSprite(const sf::String& identifier);
+		switch (identifier)
+		{
+		case TextureID::SelectUI:
+			identifierStr = "select_ui";
+			break;
+		case TextureID::MainMenu:
+			identifierStr = "main_menu";
+			break;
+		case TextureID::AddNewWorker:
+			identifierStr = "add_new_worker";
+			break;
+		case TextureID::ExistingWorkers:
+			identifierStr = "existing_workers";
+			break;
+		case TextureID::WorkerOptions:
+			identifierStr = "worker_options";
+			break;
+		case TextureID::Stats:
+			identifierStr = "worker_stats";
+			break;
+		case TextureID::SupplyStorage:
+			identifierStr = "supply_storage";
+			break;
+		case TextureID::NewSupply:
+			identifierStr = "new_supply";
+			break;
+		}
+
+		// Use the identifier string to look up the sprite in the map
+		if (sprites.find(identifierStr) != sprites.end())
+		{
+			return sprites[identifierStr];
+		}
+		static sf::Sprite emptySprite;
+		return emptySprite;
+	}
 };
 
 void controls(sf::Event event, TextureManager& textureManager) {
@@ -114,5 +163,3 @@ void controls(sf::Event event, TextureManager& textureManager) {
 		}
 	}
 }
-
-
