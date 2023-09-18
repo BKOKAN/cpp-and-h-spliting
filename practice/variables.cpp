@@ -88,9 +88,7 @@ sf::Texture& TextureManager::GetTexture(TextureID identifier)
 		return textures[index];
 	}
 
-	// Handle error: Return a default texture or throw an exception
-	// You should decide what to do here based on your error-handling strategy.
-	// For now, I'll return the first texture as a default.
+	// Handle error: Return a default texture (main_menu)
 	return textures[1];
 }
 

@@ -1,4 +1,7 @@
 #include <string>
+#include <iostream>
+#include <Graphics.hpp>
+#include <vector>
 #ifndef VARIABLES_H
 #define VARIABLES_H
 
