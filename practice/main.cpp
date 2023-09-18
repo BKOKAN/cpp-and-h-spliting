@@ -5,13 +5,15 @@
 int main()
 {
      // Create an instance of the TextureManager class
-    TextureManager textureManager;
+    TextureManager TM;
+
+    TM.Manager();
 
     // Access a texture by identifier
-    sf::Texture& supplyTexture = textureManager.getTexture("new_supply");
+    sf::Texture& supplyTexture = TM.getTexture("new_supply");
 
     // Access a sprite by identifier
-    sf::Sprite mainMenuSprite = textureManager.getSprite("main_menu");
+    sf::Sprite mainMenuSprite = TM.getSprite("main_menu");
 
     // Create a window
     sf::RenderWindow window(sf::VideoMode(1680, 1050), "Practice");
