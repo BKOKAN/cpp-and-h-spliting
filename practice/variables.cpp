@@ -1,31 +1,5 @@
-#include <Graphics.hpp>
-#include <Graphics/RenderWindow.hpp>
 #include "variables.h"
-
-/*
-void controls(sf::Event event, TextureManager& textureManager) {
-	static bool move_down = false;
-	static bool move_up = false;
-
-	if (move_up) {
-		// Handle moving up
-	}
-	if (move_down) {
-		// Handle moving down
-	}
-
-	if (event.type == sf::Event::EventType::KeyPressed) {
-		switch (event.key.code) {
-		case sf::Keyboard::Up:
-			move_up = true;
-			break;
-		case sf::Keyboard::Down:
-			move_down = true;
-			break;
-		}
-	}
-}
-*/
+#include <Graphics.hpp>
 
 void TextureManager::Manager()
 {
@@ -68,8 +42,7 @@ void TextureManager::Manager()
 	std::string add_new_supply_path = projectFolderPath + "resources/add_new_supply.png";
 	texture_add_new_supply.loadFromFile(add_new_supply_path);
 
-	// Sprite name
-	sf::Sprite sprite_select_ui; 
+	sf::Sprite sprite_select_ui; // Sprite name
 	sf::Sprite sprite_main_menu;
 	sf::Sprite sprite_add_new_worker;
 	sf::Sprite sprite_existing_workers;
@@ -96,24 +69,35 @@ void TextureManager::Manager()
 	sprite_add_new_supply.setTexture(texture_add_new_supply);
 	sprite_add_new_supply.setPosition(0, 0);
 
-	// Set the sprites in the map so its survives out side of the function and condition for pulling sprite out side of the function
-		sprites["select_ui"] = sprite_select_ui;
-		sprites["main_menu"] = sprite_main_menu;
-		sprites["add_new_worker"] = sprite_add_new_worker;
-		sprites["existing_workers"] = sprite_existing_workers;
-		sprites["worker_options"] = sprite_worker_options;
-		sprites["worker_stats"] = sprite_stats;
-		sprites["supply_storage"] = sprite_supply_storage;
-		sprites["new_supply"] = sprite_add_new_supply;
+	// Set the sprites in the map so its survives out side of the function
+	sprites["select_ui"] = sprite_select_ui;
+	sprites["main_menu"] = sprite_main_menu;
+	sprites["add_new_worker"] = sprite_add_new_worker;
+	sprites["existing_workers"] = sprite_existing_workers;
+	sprites["worker_options"] = sprite_worker_options;
+	sprites["worker_stats"] = sprite_stats;
+	sprites["supply_storage"] = sprite_supply_storage;
+	sprites["new_supply"] = sprite_add_new_supply;
 }
 
 sf::Texture& TextureManager::GetTexture(TextureID identifier)
 {
-	
+	int index = static_cast<int>(identifier);
+	if (index >= 0 && index < textures.size())
+	{
+		return textures[index];
+	}
+
+	// Handle error: Return a default texture or throw an exception
+	// You should decide what to do here based on your error-handling strategy.
+	// For now, I'll return the first texture as a default.
+	return textures[1];
 }
 
 sf::Sprite& TextureManager::GetSprite(TextureID identifier)
 {
+	std::string identifierStr;
+
 	switch (identifier)
 	{
 	case TextureID::SelectUI:
@@ -141,11 +125,38 @@ sf::Sprite& TextureManager::GetSprite(TextureID identifier)
 		identifierStr = "new_supply";
 		break;
 	}
+
 	if (sprites.find(identifierStr) != sprites.end())
 	{
 		return sprites[identifierStr];
 	}
-	static sf::Sprite emptySprite;
-	return emptySprite;
+
+	static sf::Sprite sprite_main_menu;
+	return sprite_main_menu;
 }
+/*
+void controls(sf::Event event, TextureManager& textureManager) {
+	static bool move_down = false;
+	static bool move_up = false;
+
+	if (move_up) {
+		// Handle moving up
+	}
+	if (move_down) {
+		// Handle moving down
+	}
+
+	if (event.type == sf::Event::EventType::KeyPressed) {
+		switch (event.key.code) {
+		case sf::Keyboard::Up:
+			move_up = true;
+			break;
+		case sf::Keyboard::Down:
+			move_down = true;
+			break;
+		}
+	}
+}
+*/
+
 

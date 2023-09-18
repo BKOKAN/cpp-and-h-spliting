@@ -1,3 +1,109 @@
 ﻿  variables.cpp
-C:\Users\bozo\source\repos\practice\practice\variables.cpp(6,1): error C2011: 'TextureManager': 'class' type redefinition
-C:\Users\bozo\source\repos\practice\practice\variables.h(6,7): message : see declaration of 'TextureManager'
+C:\Users\bozo\source\repos\practice\practice\variables.h(18,7): error C2039: 'vector': is not a member of 'std'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\include\string(24,1): message : see declaration of 'std'
+C:\Users\bozo\source\repos\practice\practice\variables.h(18,13): error C2143: syntax error: missing ';' before '<'
+C:\Users\bozo\source\repos\practice\practice\variables.h(18,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\bozo\source\repos\practice\practice\variables.h(18,14): error C2653: 'sf': is not a class or namespace name
+C:\Users\bozo\source\repos\practice\practice\variables.h(18,35): error C2238: unexpected token(s) preceding ';'
+C:\Users\bozo\source\repos\practice\practice\variables.h(19,7): error C2039: 'map': is not a member of 'std'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\include\string(24,1): message : see declaration of 'std'
+C:\Users\bozo\source\repos\practice\practice\variables.h(19,10): error C2143: syntax error: missing ';' before '<'
+C:\Users\bozo\source\repos\practice\practice\variables.h(19,10): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\bozo\source\repos\practice\practice\variables.h(19,11): error C2653: 'sf': is not a class or namespace name
+C:\Users\bozo\source\repos\practice\practice\variables.h(19,23): error C2653: 'sf': is not a class or namespace name
+C:\Users\bozo\source\repos\practice\practice\variables.h(19,42): error C2238: unexpected token(s) preceding ';'
+C:\Users\bozo\source\repos\practice\practice\variables.h(102,2): error C2653: 'sf': is not a class or namespace name
+C:\Users\bozo\source\repos\practice\practice\variables.h(102,13): error C2143: syntax error: missing ';' before '&'
+C:\Users\bozo\source\repos\practice\practice\variables.h(102,13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\bozo\source\repos\practice\practice\variables.h(103,2): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Users\bozo\source\repos\practice\practice\variables.h(106,2): error C2653: 'sf': is not a class or namespace name
+C:\Users\bozo\source\repos\practice\practice\variables.h(106,12): error C2143: syntax error: missing ';' before '&'
+C:\Users\bozo\source\repos\practice\practice\variables.h(106,12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\bozo\source\repos\practice\practice\variables.h(107,2): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\Users\bozo\source\repos\practice\practice\variables.h(27,3): error C2653: 'sf': is not a class or namespace name
+C:\Users\bozo\source\repos\practice\practice\variables.h(27,7): error C2065: 'Texture': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(27,15): error C2146: syntax error: missing ';' before identifier 'texture_select_ui'
+C:\Users\bozo\source\repos\practice\practice\variables.h(27,15): error C2065: 'texture_select_ui': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(28,3): error C2653: 'sf': is not a class or namespace name
+C:\Users\bozo\source\repos\practice\practice\variables.h(28,7): error C2065: 'Texture': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(28,15): error C2146: syntax error: missing ';' before identifier 'texture_main_menu'
+C:\Users\bozo\source\repos\practice\practice\variables.h(28,15): error C2065: 'texture_main_menu': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(29,3): error C2653: 'sf': is not a class or namespace name
+C:\Users\bozo\source\repos\practice\practice\variables.h(29,7): error C2065: 'Texture': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(29,15): error C2146: syntax error: missing ';' before identifier 'texture_add_new_worker'
+C:\Users\bozo\source\repos\practice\practice\variables.h(29,15): error C2065: 'texture_add_new_worker': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(30,3): error C2653: 'sf': is not a class or namespace name
+C:\Users\bozo\source\repos\practice\practice\variables.h(30,7): error C2065: 'Texture': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(30,15): error C2146: syntax error: missing ';' before identifier 'texture_existing_workers'
+C:\Users\bozo\source\repos\practice\practice\variables.h(30,15): error C2065: 'texture_existing_workers': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(31,3): error C2653: 'sf': is not a class or namespace name
+C:\Users\bozo\source\repos\practice\practice\variables.h(31,7): error C2065: 'Texture': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(31,15): error C2146: syntax error: missing ';' before identifier 'texture_worker_options'
+C:\Users\bozo\source\repos\practice\practice\variables.h(31,15): error C2065: 'texture_worker_options': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(32,3): error C2653: 'sf': is not a class or namespace name
+C:\Users\bozo\source\repos\practice\practice\variables.h(32,7): error C2065: 'Texture': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(32,15): error C2146: syntax error: missing ';' before identifier 'texture_stats'
+C:\Users\bozo\source\repos\practice\practice\variables.h(32,15): error C2065: 'texture_stats': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(33,3): error C2653: 'sf': is not a class or namespace name
+C:\Users\bozo\source\repos\practice\practice\variables.h(33,7): error C2065: 'Texture': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(33,15): error C2146: syntax error: missing ';' before identifier 'texture_add_new_supply'
+C:\Users\bozo\source\repos\practice\practice\variables.h(33,15): error C2065: 'texture_add_new_supply': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(34,3): error C2653: 'sf': is not a class or namespace name
+C:\Users\bozo\source\repos\practice\practice\variables.h(34,7): error C2065: 'Texture': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(34,15): error C2146: syntax error: missing ';' before identifier 'texture_supply_storage'
+C:\Users\bozo\source\repos\practice\practice\variables.h(34,15): error C2065: 'texture_supply_storage': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(37,3): error C2065: 'textures': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(37,22): error C2065: 'texture_select_ui': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(38,3): error C2065: 'textures': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(38,22): error C2065: 'texture_main_menu': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(39,3): error C2065: 'textures': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(39,22): error C2065: 'texture_add_new_worker': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(40,3): error C2065: 'textures': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(40,22): error C2065: 'texture_existing_workers': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(41,3): error C2065: 'textures': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(41,22): error C2065: 'texture_worker_options': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(42,3): error C2065: 'textures': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(42,22): error C2065: 'texture_stats': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(43,3): error C2065: 'textures': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(43,22): error C2065: 'texture_add_new_supply': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(44,3): error C2065: 'textures': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(44,22): error C2065: 'texture_supply_storage': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(49,3): error C2065: 'texture_select_ui': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(51,3): error C2065: 'texture_main_menu': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(53,3): error C2065: 'texture_add_new_worker': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(55,3): error C2065: 'texture_existing_workers': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(57,3): error C2065: 'texture_worker_options': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(59,3): error C2065: 'texture_stats': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(61,3): error C2065: 'texture_supply_storage': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(63,3): error C2065: 'texture_add_new_supply': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(65,3): error C2653: 'sf': is not a class or namespace name
+C:\Users\bozo\source\repos\practice\practice\variables.h(65,7): error C2065: 'Sprite': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(65,14): error C2146: syntax error: missing ';' before identifier 'sprite_select_ui'
+C:\Users\bozo\source\repos\practice\practice\variables.h(65,14): error C2065: 'sprite_select_ui': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(66,3): error C2653: 'sf': is not a class or namespace name
+C:\Users\bozo\source\repos\practice\practice\variables.h(66,7): error C2065: 'Sprite': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(66,14): error C2146: syntax error: missing ';' before identifier 'sprite_main_menu'
+C:\Users\bozo\source\repos\practice\practice\variables.h(66,14): error C2065: 'sprite_main_menu': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(67,3): error C2653: 'sf': is not a class or namespace name
+C:\Users\bozo\source\repos\practice\practice\variables.h(67,7): error C2065: 'Sprite': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(67,14): error C2146: syntax error: missing ';' before identifier 'sprite_add_new_worker'
+C:\Users\bozo\source\repos\practice\practice\variables.h(67,14): error C2065: 'sprite_add_new_worker': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(68,3): error C2653: 'sf': is not a class or namespace name
+C:\Users\bozo\source\repos\practice\practice\variables.h(68,7): error C2065: 'Sprite': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(68,14): error C2146: syntax error: missing ';' before identifier 'sprite_existing_workers'
+C:\Users\bozo\source\repos\practice\practice\variables.h(68,14): error C2065: 'sprite_existing_workers': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(69,3): error C2653: 'sf': is not a class or namespace name
+C:\Users\bozo\source\repos\practice\practice\variables.h(69,7): error C2065: 'Sprite': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(69,14): error C2146: syntax error: missing ';' before identifier 'sprite_worker_options'
+C:\Users\bozo\source\repos\practice\practice\variables.h(69,14): error C2065: 'sprite_worker_options': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(70,3): error C2653: 'sf': is not a class or namespace name
+C:\Users\bozo\source\repos\practice\practice\variables.h(70,7): error C2065: 'Sprite': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(70,14): error C2146: syntax error: missing ';' before identifier 'sprite_stats'
+C:\Users\bozo\source\repos\practice\practice\variables.h(70,14): error C2065: 'sprite_stats': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(71,3): error C2653: 'sf': is not a class or namespace name
+C:\Users\bozo\source\repos\practice\practice\variables.h(71,7): error C2065: 'Sprite': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(71,14): error C2146: syntax error: missing ';' before identifier 'sprite_supply_storage'
+C:\Users\bozo\source\repos\practice\practice\variables.h(71,14): error C2065: 'sprite_supply_storage': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(72,3): error C2653: 'sf': is not a class or namespace name
+C:\Users\bozo\source\repos\practice\practice\variables.h(72,7): error C2065: 'Sprite': undeclared identifier
+C:\Users\bozo\source\repos\practice\practice\variables.h(72,1): fatal  error C1003: error count exceeds 100; stopping compilation

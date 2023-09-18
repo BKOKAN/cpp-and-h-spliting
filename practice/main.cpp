@@ -1,19 +1,18 @@
 #include <SFML/Graphics.hpp>
 #include "variables.h"
 
-
 int main()
 {
-     // Create an instance of the TextureManager class
+    // Create an instance of the TextureManager class
     TextureManager TM;
 
     TM.Manager();
 
     // Access a texture by identifier
-    sf::Texture& supplyTexture = TM.getTexture("new_supply");
+    sf::Texture& main_menu_texture = TM.GetTexture(TextureID::MainMenu);
 
     // Access a sprite by identifier
-    sf::Sprite mainMenuSprite = TM.getSprite("main_menu");
+    sf::Sprite main_menu_sprite = TM.GetSprite(TextureID::MainMenu);
 
     // Create a window
     sf::RenderWindow window(sf::VideoMode(1680, 1050), "Practice");
@@ -32,7 +31,7 @@ int main()
         window.clear();
 
         // Draw the main_menu sprite
-        window.draw(mainMenuSprite);
+        window.draw(main_menu_sprite);
 
         // Display the contents of the window
         window.display();
