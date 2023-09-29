@@ -1,7 +1,2 @@
 ﻿  variables.cpp
-C:\Users\bozo\source\repos\practice\practice\variables.cpp(4,22): error C2084: function 'void TextureManager::Manager(void)' already has a body
-C:\Users\bozo\source\repos\practice\practice\variables.h(27,7): message : see previous definition of 'Manager'
-C:\Users\bozo\source\repos\practice\practice\variables.cpp(83,30): error C2084: function 'sf::Texture &TextureManager::GetTexture(TextureID)' already has a body
-C:\Users\bozo\source\repos\practice\practice\variables.h(105,15): message : see previous definition of 'GetTexture'
-C:\Users\bozo\source\repos\practice\practice\variables.cpp(97,29): error C2084: function 'sf::Sprite &TextureManager::GetSprite(TextureID)' already has a body
-C:\Users\bozo\source\repos\practice\practice\variables.h(109,14): message : see previous definition of 'GetSprite'
+  practice.vcxproj -> C:\Users\bozo\source\repos\practice\x64\Debug\practice.exe

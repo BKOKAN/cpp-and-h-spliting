@@ -1,8 +1,30 @@
 #include "variables.h"
+#include <string>
+#include <iostream>
 #include <Graphics.hpp>
+#include <vector>
+
+TextureManager::TextureManager() {
+	// Initialize member variables or perform setup here
+
+	sf::Texture texture_select_ui;
+	texture_select_ui.loadFromFile("select_ui_path");
+	textures.push_back(texture_select_ui);
+    sf::Sprite sprite_select_ui;
+	sprite_select_ui.setTexture(texture_select_ui);
+	sprites["select_ui"] = sprite_select_ui;
+
+	sf::Texture texture_main_menu;
+	texture_main_menu.loadFromFile("main_menu_path");
+	textures.push_back(texture_main_menu);
+	sf::Sprite sprite_main_menu;
+	sprite_main_menu.setTexture(texture_main_menu);
+	sprites["main_menu"] = sprite_main_menu;
+}
 
 void TextureManager::Manager()
 {
+	
 	// Set name for textures
 	sf::Texture texture_select_ui;
 	sf::Texture texture_main_menu;
@@ -78,10 +100,12 @@ void TextureManager::Manager()
 	sprites["worker_stats"] = sprite_stats;
 	sprites["supply_storage"] = sprite_supply_storage;
 	sprites["new_supply"] = sprite_add_new_supply;
-}
+	
+};
 
 sf::Texture& TextureManager::GetTexture(TextureID identifier)
 {
+	
 	int index = static_cast<int>(identifier);
 	if (index >= 0 && index < textures.size())
 	{
@@ -90,10 +114,12 @@ sf::Texture& TextureManager::GetTexture(TextureID identifier)
 
 	// Handle error: Return a default texture (main_menu)
 	return textures[1];
-}
+	
+};
 
 sf::Sprite& TextureManager::GetSprite(TextureID identifier)
 {
+	
 	std::string identifierStr;
 
 	switch (identifier)
@@ -131,7 +157,8 @@ sf::Sprite& TextureManager::GetSprite(TextureID identifier)
 
 	static sf::Sprite sprite_main_menu;
 	return sprite_main_menu;
-}
+	
+};
 /*
 void controls(sf::Event event, TextureManager& textureManager) {
 	static bool move_down = false;
