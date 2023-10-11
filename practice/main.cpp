@@ -3,6 +3,7 @@
 
 int main()
 {
+    system("cd");
     // Create an instance of the TextureManager class
     TextureManager TM;
 
