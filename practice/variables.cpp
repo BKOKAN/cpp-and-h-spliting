@@ -6,16 +6,17 @@
 
 TextureManager::TextureManager() {
 	// Initialize member variables or perform setup here
-
+	std::string projectFolderPath = "./"; // Direct path to the project file
+	std::string ResourcesFolder = projectFolderPath + "resources";
 	sf::Texture texture_select_ui;
-	texture_select_ui.loadFromFile("select_ui_path");
+	texture_select_ui.loadFromFile(ResourcesFolder + "/select_ui.png");
 	textures.push_back(texture_select_ui);
     sf::Sprite sprite_select_ui;
 	sprite_select_ui.setTexture(texture_select_ui);
 	sprites["select_ui"] = sprite_select_ui;
 
 	sf::Texture texture_main_menu;
-	texture_main_menu.loadFromFile("main_menu_path");
+	texture_main_menu.loadFromFile(ResourcesFolder + "/main_menu.png" );
 	textures.push_back(texture_main_menu);
 	sf::Sprite sprite_main_menu;
 	sprite_main_menu.setTexture(texture_main_menu);
@@ -46,11 +47,11 @@ void TextureManager::Manager()
 	textures.push_back(texture_supply_storage);
 
 	std::string projectFolderPath = "./"; // Direct path to the project file
-	std::string ResourcesFolder = projectFolderPath + "/resources";
+	std::string ResourcesFolder = projectFolderPath + "resources";
 	std::string select_ui_path = projectFolderPath + "resources/select_ui.png";
-	texture_select_ui.loadFromFile(select_ui_path);
+	texture_select_ui.loadFromFile("select_ui_path");
 	std::string main_menu_path = projectFolderPath + "resources/main_menu.png";
-	texture_main_menu.loadFromFile(main_menu_path);
+	texture_main_menu.loadFromFile("main_menu_path");
 	std::string add_new_worker_path = projectFolderPath + "resources/texture_add_new_worker.png";
 	texture_add_new_worker.loadFromFile(add_new_worker_path);
 	std::string existing_workers_path = projectFolderPath + "resources/texture_existing_workers.png";
