@@ -3,11 +3,84 @@
 #include <iostream>
 #include <Graphics.hpp>
 #include <vector>
+#include <map>
 
+std::string projectFolderPath = "./"; // Direct path to the project file
+std::string ResourcesFolder = projectFolderPath + "resources";
+
+TextureManager::TextureManager() {
+	// Initialize member variables or perform setup here
+
+	// Load and store textures
+	LoadTexture("select_ui", ResourcesFolder + "/select_ui.png");
+	LoadTexture("main_menu", ResourcesFolder + "/main_menu.png");
+	// Add more textures here as needed
+}
+
+void TextureManager::LoadTexture(const std::string& identifier, const std::string& filePath) {
+	sf::Texture texture;
+	if (texture.loadFromFile(filePath)) {
+		textures[identifier] = texture;
+	}
+	else {
+		std::cerr << "Failed to load texture: " << filePath << std::endl;
+	}
+}
+
+sf::Texture& TextureManager::GetTexture(const std::string& identifier) {
+	if (textures.find(identifier) != textures.end()) {
+		return textures[identifier];
+	}
+
+	// Handle error: Return a default texture (e.g., main_menu)
+	return textures["main_menu"];
+}
+
+sf::Sprite& TextureManager::GetSprite(const std::string& identifier) {
+	if (sprites.find(identifier) != sprites.end()) {
+		return sprites[identifier];
+	}
+
+	// Handle error: Return a default sprite (e.g., main_menu)
+	return sprites["main_menu"];
+}
+
+// Call this function to initialize and manage textures and sprites
+void TextureManager::Manager() {
+	// Load additional textures and set sprites here
+	LoadTexture("add_new_worker", projectFolderPath + "resources/texture_add_new_worker.png");
+	LoadTexture("existing_workers", projectFolderPath + "resources/texture_existing_workers.png");
+	LoadTexture("worker_options", projectFolderPath + "resources/texture_worker_options.png");
+	LoadTexture("stats", projectFolderPath + "resources/texture_stats.png");
+	LoadTexture("supply_storage", projectFolderPath + "resources/texture_supply_storage.png");
+	LoadTexture("new_supply", projectFolderPath + "resources/add_new_supply.png");
+
+	// Create and set sprites for the newly loaded textures
+	SetSprite("add_new_worker", "add_new_worker", 0, 0);
+	SetSprite("existing_workers", "existing_workers", 0, 0);
+	SetSprite("worker_options", "worker_options", 0, 0);
+	SetSprite("stats", "worker_stats", 0, 0);
+	SetSprite("supply_storage", "supply_storage", 0, 0);
+	SetSprite("new_supply", "new_supply", 0, 0);
+}
+
+void TextureManager::SetSprite(const std::string& identifier, const std::string& textureIdentifier, float x, float y) {
+	if (textures.find(textureIdentifier) != textures.end()) {
+		sf::Sprite sprite;
+		sprite.setTexture(textures[textureIdentifier]);
+		sprite.setPosition(x, y);
+		sprites[identifier] = sprite;
+	}
+	else {
+		std::cerr << "Texture not found: " << textureIdentifier << std::endl;
+	}
+}
+/*
 TextureManager::TextureManager() {
 	// Initialize member variables or perform setup here
 	std::string projectFolderPath = "./"; // Direct path to the project file
 	std::string ResourcesFolder = projectFolderPath + "resources";
+	
 	sf::Texture texture_select_ui;
 	texture_select_ui.loadFromFile(ResourcesFolder + "/select_ui.png");
 	textures.push_back(texture_select_ui);
@@ -24,8 +97,7 @@ TextureManager::TextureManager() {
 }
 
 void TextureManager::Manager()
-{
-	
+{	
 	// Set name for textures
 	sf::Texture texture_select_ui;
 	sf::Texture texture_main_menu;
@@ -49,9 +121,9 @@ void TextureManager::Manager()
 	std::string projectFolderPath = "./"; // Direct path to the project file
 	std::string ResourcesFolder = projectFolderPath + "resources";
 	std::string select_ui_path = projectFolderPath + "resources/select_ui.png";
-	texture_select_ui.loadFromFile("select_ui_path");
+	texture_select_ui.loadFromFile(select_ui_path);
 	std::string main_menu_path = projectFolderPath + "resources/main_menu.png";
-	texture_main_menu.loadFromFile("main_menu_path");
+	texture_main_menu.loadFromFile(main_menu_path);
 	std::string add_new_worker_path = projectFolderPath + "resources/texture_add_new_worker.png";
 	texture_add_new_worker.loadFromFile(add_new_worker_path);
 	std::string existing_workers_path = projectFolderPath + "resources/texture_existing_workers.png";
@@ -100,8 +172,7 @@ void TextureManager::Manager()
 	sprites["worker_options"] = sprite_worker_options;
 	sprites["worker_stats"] = sprite_stats;
 	sprites["supply_storage"] = sprite_supply_storage;
-	sprites["new_supply"] = sprite_add_new_supply;
-	
+	sprites["new_supply"] = sprite_add_new_supply;	
 };
 
 sf::Texture& TextureManager::GetTexture(TextureID identifier)
@@ -160,7 +231,6 @@ sf::Sprite& TextureManager::GetSprite(TextureID identifier)
 	return sprite_main_menu;
 	
 };
-/*
 void controls(sf::Event event, TextureManager& textureManager) {
 	static bool move_down = false;
 	static bool move_up = false;

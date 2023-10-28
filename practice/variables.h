@@ -19,14 +19,17 @@ enum TextureID {
 
 class TextureManager {
 private:
-    std::vector<sf::Texture> textures;
+
     std::map<std::string, sf::Sprite> sprites;
+    std::map<std::string, sf::Texture> textures;
 
 public:
     TextureManager(); // Constructor
+    void LoadTexture(const std::string& identifier, const std::string& filePath);
     void Manager();
-    sf::Texture& GetTexture(TextureID identifier);
-    sf::Sprite& GetSprite(TextureID identifier);
+    sf::Texture& GetTexture(const std::string& identifier);
+    sf::Sprite& GetSprite(const std::string& identifier);
+    void SetSprite(const std::string& identifier, const std::string& textureIdentifier, float x, float y);
 };
 
 #endif

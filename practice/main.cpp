@@ -10,10 +10,10 @@ int main()
     TM.Manager();
 
     // Access a texture by identifier
-    sf::Texture& main_menu_texture = TM.GetTexture(TextureID::MainMenu);
+    sf::Texture& main_menu_texture = TM.GetTexture("main_menu");
 
     // Access a sprite by identifier
-    sf::Sprite main_menu_sprite = TM.GetSprite(TextureID::MainMenu);
+    sf::Sprite main_menu_sprite = TM.GetSprite("main_menu");
 
     // Create a window
     sf::RenderWindow window(sf::VideoMode(1680, 1050), "Practice");
