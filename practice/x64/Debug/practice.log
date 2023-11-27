@@ -1,3 +1,5 @@
 ﻿  variables.cpp
+C:\Users\bozo\source\repos\practice\practice\variables.cpp(88,54): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\bozo\source\repos\practice\practice\variables.cpp(88,48): warning C4305: 'argument': truncation from 'double' to 'float'
   main.cpp
   practice.vcxproj -> C:\Users\bozo\source\repos\practice\x64\Debug\practice.exe

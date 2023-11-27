@@ -6,16 +6,7 @@
 #include <vector>
 #include <map>
 
-enum TextureID {
-    SelectUI,
-    MainMenu,
-    AddNewWorker,
-    ExistingWorkers,
-    WorkerOptions,
-    Stats,
-    SupplyStorage,
-    NewSupply
-};
+enum TextureID {};
 
 class TextureManager {
 private:
@@ -29,7 +20,8 @@ public:
     void Manager();
     sf::Texture& GetTexture(const std::string& identifier);
     sf::Sprite& GetSprite(const std::string& identifier);
-    void SetSprite(const std::string& identifier, const std::string& textureIdentifier, float x, float y);
+    void SetSprite(const std::string& identifier, const std::string& textureIdentifier, float x, float y, float scaleX, float scaleY);
 };
 
+void controls(sf::Event event, TextureManager& textureManager);
 #endif

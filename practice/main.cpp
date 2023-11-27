@@ -10,10 +10,12 @@ int main()
     TM.Manager();
 
     // Access a texture by identifier
-    sf::Texture& main_menu_texture = TM.GetTexture("main_menu");
+    sf::Texture main_menu_texture = TM.GetTexture("main_menu");
+    sf::Texture select_ui_texture = TM.GetTexture("select_ui");
 
     // Access a sprite by identifier
     sf::Sprite main_menu_sprite = TM.GetSprite("main_menu");
+    sf::Sprite select_ui_sprite = TM.GetSprite("select_ui");
 
     // Create a window
     sf::RenderWindow window(sf::VideoMode(1680, 1050), "Practice");
@@ -26,6 +28,7 @@ int main()
         {
             if (event.type == sf::Event::Closed)
                 window.close();
+            controls(event, TM);
         }
 
         // Clear the window
@@ -33,6 +36,7 @@ int main()
 
         // Draw the main_menu sprite
         window.draw(main_menu_sprite);
+        window.draw(select_ui_sprite);
 
         // Display the contents of the window
         window.display();
