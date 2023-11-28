@@ -109,7 +109,7 @@ void TextureManager::SetSprite(const std::string& identifier, const std::string&
 	}
 }
 
-void controls(sf::Event event, TextureManager& textureManager) 
+/*void controls(sf::Event event, TextureManager& textureManager)
 {
 	static bool move_down = false;
 	static bool move_up = false;
@@ -117,7 +117,7 @@ void controls(sf::Event event, TextureManager& textureManager)
 	if (move_up) 
 	{
     // Handle moving up
-	textureManager.GetSprite("select_ui").move(0, -50);
+		textureManager.GetSprite("select_ui").move(0, -50);
 	}
 
 	if (move_down) 
@@ -153,6 +153,6 @@ void controls(sf::Event event, TextureManager& textureManager)
 	}
 	
 }
-
+*/
 
 

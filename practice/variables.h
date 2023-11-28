@@ -23,5 +23,5 @@ public:
     void SetSprite(const std::string& identifier, const std::string& textureIdentifier, float x, float y, float scaleX, float scaleY);
 };
 
-void controls(sf::Event event, TextureManager& textureManager);
+/*void controls(sf::Event event, TextureManager& textureManager);*/
 #endif
