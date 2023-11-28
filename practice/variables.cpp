@@ -95,12 +95,12 @@ void TextureManager::Manager()
 	SetSprite("main_menu", "main_menu", 0, 0, 1, 1);
 }
 
-void TextureManager::SetSprite(const std::string& identifier, const std::string& textureIdentifier, float x, float y, float scaleX, float scaleY) 
+void TextureManager::SetSprite(const std::string& identifier, const std::string& textureIdentifier, float positionX, float positionY, float scaleX, float scaleY) 
 {
 	if (textures.find(textureIdentifier) != textures.end()) {
 		sf::Sprite sprite;
 		sprite.setTexture(textures[textureIdentifier]);
-		sprite.setPosition(x, y);
+		sprite.setPosition(positionX, positionY);
 		sprite.setScale(scaleX, scaleY); // Set scale for the sprite
 		sprites[identifier] = sprite;
 	}
@@ -109,19 +109,32 @@ void TextureManager::SetSprite(const std::string& identifier, const std::string&
 	}
 }
 
-void controls(sf::Event event, float scaleX, float scaleY, TextureManager& textureManager)
+/*
+void controls(sf::Event event, TextureManager& textureManager)
 {
+	bool moveup = false;
+	bool movedown = false;
+	if (moveup)
+	{
+		// Handle moving up
+		textureManager.GetSprite("select_ui").move( + 0,  - 50);
+	}
+	if (movedown)
+	{
+		// Handle moving down
+		textureManager.GetSprite("select_ui").move( + 0,  + 50);
+	}
     if(event.type == sf::Event::EventType::KeyPressed) 
 	{
 		switch (event.key.code) 
 		{
 		case sf::Keyboard::Up:
 			// Handle moving up
-			textureManager.GetSprite("select_ui").move(scaleX + 0, scaleY - 50);
+			moveup = true;
 			break;
 		case sf::Keyboard::Down:
 			// Handle moving down
-			textureManager.GetSprite("select_ui").move(scaleX + 0, scaleY + 50);
+			movedown = true;
 			break;
 		}
 	}
@@ -130,17 +143,14 @@ void controls(sf::Event event, float scaleX, float scaleY, TextureManager& textu
 		switch (event.key.code) 
 		{
 		case sf::Keyboard::Up:
-			textureManager.GetSprite("select_ui").move(scaleX, scaleY);
+			moveup = false;
 			break;
 
 		case sf::Keyboard::Down:
-			textureManager.GetSprite("select_ui").move(scaleX, scaleY);
+			movedown = false;
 			break;
 		}
 	}
 	
 }
-
-void controls(sf::Event event, TextureManager& textureManager, float scaleX, float scaleY)
-{
-}
+*/

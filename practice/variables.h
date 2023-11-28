@@ -20,8 +20,10 @@ public:
     void Manager();
     sf::Texture& GetTexture(const std::string& identifier);
     sf::Sprite& GetSprite(const std::string& identifier);
-    void SetSprite(const std::string& identifier, const std::string& textureIdentifier, float x, float y, float scaleX, float scaleY);
+    void SetSprite(const std::string& identifier, const std::string& textureIdentifier, float positionX, float positionY, float scaleX, float scaleY);
 };
 
-void controls(sf::Event event, float scaleX, float scaleY, TextureManager& textureManager);
+/*
+void controls(sf::Event event, TextureManager& textureManager);
+*/
 #endif

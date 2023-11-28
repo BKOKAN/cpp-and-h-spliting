@@ -9,9 +9,7 @@ int main()
     TextureManager TM;
 
     TM.Manager();
-	static bool move_down = false;
-	static bool move_up = false;
-    
+   
 	// Access a texture by identifier
     sf::Texture main_menu_texture = TM.GetTexture("main_menu");
     sf::Texture select_ui_texture = TM.GetTexture("select_ui");
@@ -20,6 +18,17 @@ int main()
     sf::Sprite main_menu_sprite = TM.GetSprite("main_menu");
     sf::Sprite select_ui_sprite = TM.GetSprite("select_ui");
 
+    bool moveup = false;
+    bool movedown = false;
+    if (moveup)
+    {
+        // Handle moving up
+        select_ui_sprite.move(0, -50);
+    }
+    if (movedown)
+    {
+        select_ui_sprite.move(0, +50);
+    }
     // Create a window
     sf::RenderWindow window(sf::VideoMode(1680, 1050), "Practice");
     window.setFramerateLimit(144);
@@ -31,7 +40,34 @@ int main()
         {
             if (event.type == sf::Event::Closed)
                 window.close();
-            controls(event, scaleX, scaleY, TM);
+            //controls(event, TM);
+            if (event.type == sf::Event::EventType::KeyPressed)
+            {
+                switch (event.key.code)
+                {
+                case sf::Keyboard::Up:
+                    // Handle moving up
+                    moveup = true;
+                    break;
+                case sf::Keyboard::Down:
+                    // Handle moving down
+                    movedown = true;
+                    break;
+                }
+            }
+            else if (event.type == sf::Event::EventType::KeyReleased)
+            {
+                switch (event.key.code)
+                {
+                case sf::Keyboard::Up:
+                    moveup = false;
+                    break;
+
+                case sf::Keyboard::Down:
+                    movedown = false;
+                    break;
+                }
+            }
         }
         // Clear the window
         window.clear();
