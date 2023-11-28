@@ -109,32 +109,19 @@ void TextureManager::SetSprite(const std::string& identifier, const std::string&
 	}
 }
 
-/*void controls(sf::Event event, TextureManager& textureManager)
+void controls(sf::Event event, float scaleX, float scaleY, TextureManager& textureManager)
 {
-	static bool move_down = false;
-	static bool move_up = false;
-
-	if (move_up) 
-	{
-    // Handle moving up
-		textureManager.GetSprite("select_ui").move(0, -50);
-	}
-
-	if (move_down) 
-	{
-    // Handle moving down
-	textureManager.GetSprite("select_ui").move(0, 50);
-	}
-	
-	if(event.type == sf::Event::EventType::KeyPressed) 
+    if(event.type == sf::Event::EventType::KeyPressed) 
 	{
 		switch (event.key.code) 
 		{
 		case sf::Keyboard::Up:
-			move_up = true;
+			// Handle moving up
+			textureManager.GetSprite("select_ui").move(scaleX + 0, scaleY - 50);
 			break;
 		case sf::Keyboard::Down:
-			move_down = true;
+			// Handle moving down
+			textureManager.GetSprite("select_ui").move(scaleX + 0, scaleY + 50);
 			break;
 		}
 	}
@@ -143,16 +130,17 @@ void TextureManager::SetSprite(const std::string& identifier, const std::string&
 		switch (event.key.code) 
 		{
 		case sf::Keyboard::Up:
-			move_up = false;
+			textureManager.GetSprite("select_ui").move(scaleX, scaleY);
 			break;
 
 		case sf::Keyboard::Down:
-			move_down = false;
+			textureManager.GetSprite("select_ui").move(scaleX, scaleY);
 			break;
 		}
 	}
 	
 }
-*/
 
-
+void controls(sf::Event event, TextureManager& textureManager, float scaleX, float scaleY)
+{
+}
