@@ -14,7 +14,8 @@ enum identifier
 	worker_options,
 	stats,
 	supply_storage,
-	new_supply
+	new_supply,
+	check_mark
 };
 
 TextureManager::TextureManager() 
@@ -30,7 +31,8 @@ TextureManager::TextureManager()
 	LoadTexture("worker_options", ResourcesFolder + "/worker_options.png");
 	LoadTexture("stats", ResourcesFolder + "/stats.png");
 	LoadTexture("supply_storage", ResourcesFolder + "/supply_storage.png");
-	LoadTexture("new_supply", ResourcesFolder + "/new_supply");
+	LoadTexture("new_supply", ResourcesFolder + "/new_supply.png");
+	LoadTexture("check_mark", ResourcesFolder + "/check_mark.png");
 	// Add more textures here as needed
 }
 
@@ -83,9 +85,10 @@ void TextureManager::Manager()
 	LoadTexture("supply_storage", projectFolderPath + "resources/supply_storage.png");
 	LoadTexture("new_supply", projectFolderPath + "resources/add_new_supply.png");
 	LoadTexture("main_menu", projectFolderPath + "resources/main_menu.png");
+	LoadTexture("check_mark", projectFolderPath + "resources/check_mark.png");
 
 	// Create and set sprites for the newly loaded textures
-	SetSprite("select_ui", "select_ui", 525, 285, 0.35, 0.1);
+	SetSprite("select_ui", "select_ui", 500, 200, 0.35, 0.1);
 	SetSprite("add_new_worker", "add_new_worker", 0, 0, 1, 1);
 	SetSprite("existing_workers", "existing_workers", 0, 0, 1 ,1);
 	SetSprite("worker_options", "worker_options", 0, 0, 1 ,1);
@@ -93,6 +96,7 @@ void TextureManager::Manager()
 	SetSprite("supply_storage", "supply_storage", 0, 0, 1, 1);
 	SetSprite("new_supply", "new_supply", 0, 0, 1, 1);
 	SetSprite("main_menu", "main_menu", 0, 0, 1, 1);
+	SetSprite("check_mark", "check_mark", 0, 0, 1, 1);
 }
 
 void TextureManager::SetSprite(const std::string& identifier, const std::string& textureIdentifier, float positionX, float positionY, float scaleX, float scaleY) 
@@ -110,19 +114,19 @@ void TextureManager::SetSprite(const std::string& identifier, const std::string&
 }
 
 /*
-void controls(sf::Event event, TextureManager& textureManager)
+void controls(sf::Event event, TextureManager& Manager)
 {
 	bool moveup = false;
 	bool movedown = false;
 	if (moveup)
 	{
 		// Handle moving up
-		textureManager.GetSprite("select_ui").move( + 0,  - 50);
+		Manager.GetSprite("select_ui").move( + 0,  - 50);
 	}
 	if (movedown)
 	{
 		// Handle moving down
-		textureManager.GetSprite("select_ui").move( + 0,  + 50);
+		Manager.GetSprite("select_ui").move( + 0,  + 50);
 	}
     if(event.type == sf::Event::EventType::KeyPressed) 
 	{
