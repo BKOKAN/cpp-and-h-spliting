@@ -15,16 +15,17 @@ enum identifier
 	stats,
 	supply_storage,
 	new_supply,
-	check_mark
+	check_mark,
+	check_mark_1
 };
 
 TextureManager::TextureManager() 
 {
-	// Initialize member variables or perform setup here
 	std::string projectFolderPath = "./"; // Direct path to the project file
 	std::string ResourcesFolder = projectFolderPath + "resources";
 	// Load and store textures
 	LoadTexture("select_ui", ResourcesFolder + "/select_ui.png");
+	LoadTexture("select_ui_1", ResourcesFolder + "/select_ui_1.png");
 	LoadTexture("main_menu", ResourcesFolder + "/main_menu.png");
 	LoadTexture("add_new_worker", ResourcesFolder + "/add_new_worker.png");
 	LoadTexture("existing_workers", ResourcesFolder + "/existing_workers.png");
@@ -33,6 +34,7 @@ TextureManager::TextureManager()
 	LoadTexture("supply_storage", ResourcesFolder + "/supply_storage.png");
 	LoadTexture("new_supply", ResourcesFolder + "/new_supply.png");
 	LoadTexture("check_mark", ResourcesFolder + "/check_mark.png");
+	LoadTexture("check_mark_1", ResourcesFolder + "/check_mark.png");
 	// Add more textures here as needed
 }
 
@@ -75,9 +77,10 @@ sf::Sprite& TextureManager::GetSprite(const std::string& identifier)
 void TextureManager::Manager() 
 {
 	std::string projectFolderPath = "./"; // Direct path to the project file
-	std::string ResourcesFolder = projectFolderPath + "resources";
+	std::string ResourcesFolder = projectFolderPath + "resources"; // Direct path to the resource folder
 	// Load additional textures and set sprites here
 	LoadTexture("select_ui", projectFolderPath + "resources/select_ui.png");
+	LoadTexture("select_ui_1", projectFolderPath + "resources/select_ui_1.png");
 	LoadTexture("add_new_worker", projectFolderPath + "resources/add_new_worker.png");
 	LoadTexture("existing_workers", projectFolderPath + "resources/existing_workers.png");
 	LoadTexture("worker_options", projectFolderPath + "resources/worker_options.png");
@@ -86,9 +89,11 @@ void TextureManager::Manager()
 	LoadTexture("new_supply", projectFolderPath + "resources/add_new_supply.png");
 	LoadTexture("main_menu", projectFolderPath + "resources/main_menu.png");
 	LoadTexture("check_mark", projectFolderPath + "resources/check_mark.png");
+	LoadTexture("check_mark_1", projectFolderPath + "resources/check_mark.png");
 
-	// Create and set sprites for the newly loaded textures
+	// Create and set sprites for the newly loaded textures ex. SetSprite("Sprite", "Sprite", PositionX, PositionY, ScaleX, ScaleY)
 	SetSprite("select_ui", "select_ui", 500, 200, 0.35, 0.1);
+	SetSprite("select_ui_1", "select_ui_1", 650, 175, 0.3, 0.05);
 	SetSprite("add_new_worker", "add_new_worker", 0, 0, 1, 1);
 	SetSprite("existing_workers", "existing_workers", 0, 0, 1 ,1);
 	SetSprite("worker_options", "worker_options", 0, 0, 1 ,1);
@@ -96,7 +101,8 @@ void TextureManager::Manager()
 	SetSprite("supply_storage", "supply_storage", 0, 0, 1, 1);
 	SetSprite("new_supply", "new_supply", 0, 0, 1, 1);
 	SetSprite("main_menu", "main_menu", 0, 0, 1, 1);
-	SetSprite("check_mark", "check_mark", 0, 0, 1, 1);
+	SetSprite("check_mark", "check_mark", 555, 395 ,1, 1);
+	SetSprite("check_mark_1", "check_mark_1", 555, 660, 1, 1);
 }
 
 void TextureManager::SetSprite(const std::string& identifier, const std::string& textureIdentifier, float positionX, float positionY, float scaleX, float scaleY) 
